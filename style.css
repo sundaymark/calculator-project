@@ -18,3 +18,13 @@ h1:hover{
     border-radius: 20px;
 
 }
+
+.calculator{
+    background-color: rgb(25, 31, 31);
+    width: 20%;
+    height: 400px;
+    margin: auto;
+    margin-top: 30px;
+
+    
+}
