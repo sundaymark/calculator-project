@@ -14,15 +14,31 @@ const operate = (operator, firstNumber,secondNumber)=>{
     if(operator === '+'){
         return add(firstNumber,secondNumber);
     }else if(operator === '-'){
-        return subtract(firstNumber,secondNumber)
+        return subtract(firstNumber,secondNumber);
     }else if ( operator === '*'){
-        return multiply(firstNumber,secondNumber)
+        return multiply(firstNumber,secondNumber);
     }else if (operator === '/'){
         return divide(firstNumber,secondNumber);
     }
 }
 
-console.log(operate('+',5,5))
+const btns = document.querySelectorAll('.btn');
+btns.forEach(function(btn){
+    btn.addEventListener('click',function(){
+        display.innerText += btn.innerText
+        storeDisplay = display.innerText;
+        console.log(storeDisplay)
+        
+    })
+})
+
+const display = document.querySelector('.display');
+
+let storeDisplay = '';
+        
+
+
+
 
 
 
