@@ -22,13 +22,29 @@ const operate = (operator, firstNumber,secondNumber)=>{
     }
 }
 
-const btns = document.querySelectorAll('.btn');
-btns.forEach(function(btn){
+const btnNumber = document.querySelectorAll('.btn-number');
+btnNumber.forEach(function(btn){
     btn.addEventListener('click',function(){
         display.innerText += btn.innerText
         storeDisplay = display.innerText;
     })
 })
+
+const btnOperator = document.querySelectorAll('.btn-operator');
+let numberStore = '';
+btnOperator.forEach(function(btn){
+    btn.addEventListener('click',function(){
+        if(btn === '+'){
+        
+
+        }
+    })
+})
+
+
+
+
+
 
 const display = document.querySelector('.display');
 
