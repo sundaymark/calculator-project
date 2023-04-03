@@ -27,8 +27,6 @@ btns.forEach(function(btn){
     btn.addEventListener('click',function(){
         display.innerText += btn.innerText
         storeDisplay = display.innerText;
-        console.log(storeDisplay)
-        
     })
 })
 
