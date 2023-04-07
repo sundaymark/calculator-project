@@ -31,15 +31,23 @@ btnNumber.forEach(function(btn){
 })
 
 const btnOperator = document.querySelectorAll('.btn-operator');
-let numberStore = '';
 btnOperator.forEach(function(btn){
     btn.addEventListener('click',function(){
-        if(btn === '+'){
-        
-
-        }
+        display.innerText += btn.innerText;
     })
 })
+
+const equalBtn = document.querySelector('.equal');
+equalBtn.addEventListener('click',function(){
+    display.innerText += equalBtn.innerText
+
+    if(operator === '+'){
+        return add();
+    }
+    
+
+})
+
 
 
 
