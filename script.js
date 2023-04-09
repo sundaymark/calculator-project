@@ -6,19 +6,21 @@ const multiply = (a, b) =>  a  *  b;
 
 const divide = (a, b) =>  a  /  b;
 
-const firstNumber = '';
-const operator = '';
-const secondNumber = '';
+let firstNumber = '';
+let operator = '';
+let secondNumber = '';
 
-const operate = (operator, firstNumber,secondNumber)=>{
+const operate = ()=>{
+    let newfirstNumber = parseInt(firstNumber);
+    let newSecondNumber = parseInt(secondNumber); 
     if(operator === '+'){
-        return add(firstNumber,secondNumber);
+        return add(newfirstNumber,newSecondNumber);
     }else if(operator === '-'){
-        return subtract(firstNumber,secondNumber);
+        return subtract(newfirstNumber,newSecondNumber);
     }else if ( operator === '*'){
-        return multiply(firstNumber,secondNumber);
+        return multiply(newfirstNumber,newSecondNumber);
     }else if (operator === '/'){
-        return divide(firstNumber,secondNumber);
+        return divide(newfirstNumber,newSecondNumber);
     }
 }
 
@@ -27,6 +29,12 @@ btnNumber.forEach(function(btn){
     btn.addEventListener('click',function(){
         display.innerText += btn.innerText
         storeDisplay = display.innerText;
+        if(operator !== ''){
+            secondNumber += btn.innerText
+        }else{
+            firstNumber += btn.innerText
+        }
+        console.log(firstNumber,secondNumber)
     })
 })
 
@@ -34,16 +42,13 @@ const btnOperator = document.querySelectorAll('.btn-operator');
 btnOperator.forEach(function(btn){
     btn.addEventListener('click',function(){
         display.innerText += btn.innerText;
+        operator = btn.innerText
     })
 })
 
 const equalBtn = document.querySelector('.equal');
 equalBtn.addEventListener('click',function(){
-    display.innerText += equalBtn.innerText
-
-    if(operator === '+'){
-        return add();
-    }
+    display.innerText = operate();
     
 
 })
