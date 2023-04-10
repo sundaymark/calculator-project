@@ -25,8 +25,8 @@
  };
 
  const btnNumber = document.querySelectorAll(".btn-number");
- btnNumber.forEach(function (btn) {
-   btn.addEventListener("click", function () {
+ btnNumber.forEach((btn) => {
+   btn.addEventListener("click", () =>{
      display.innerText += btn.innerText;
      storeDisplay = display.innerText;
      if (operator !== "") {
@@ -34,20 +34,19 @@
      } else {
        firstNumber += btn.innerText;
      }
-     console.log(firstNumber, secondNumber);
    });
  });
 
  const btnOperator = document.querySelectorAll(".btn-operator");
- btnOperator.forEach(function (btn) {
-   btn.addEventListener("click", function () {
+ btnOperator.forEach( (btn)=> {
+   btn.addEventListener("click",() =>{
      display.innerText += btn.innerText;
      operator = btn.innerText;
    });
  });
 
  const equalBtn = document.querySelector(".equal");
- equalBtn.addEventListener("click", function () {
+ equalBtn.addEventListener("click", ()=> {
    display.innerText = operate();
  });
 
