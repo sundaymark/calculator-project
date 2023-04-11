@@ -11,8 +11,8 @@
  let secondNumber = "";
 
  const operate = () => {
-   let newfirstNumber = parseInt(firstNumber);
-   let newSecondNumber = parseInt(secondNumber);
+   let newfirstNumber = Number(firstNumber);
+   let newSecondNumber = Number(secondNumber);
    if (operator === "+") {
      return add(newfirstNumber, newSecondNumber);
    } else if (operator === "-") {
@@ -47,7 +47,11 @@
 
  const equalBtn = document.querySelector(".equal");
  equalBtn.addEventListener("click", ()=> {
-   display.innerText = operate();
+   let answer = operate();
+    firstNumber = answer;
+   secondNumber = '';
+    operator = '';
+   display.innerText = firstNumber;
  });
 
  const display = document.querySelector(".display");
