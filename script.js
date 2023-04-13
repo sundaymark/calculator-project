@@ -43,6 +43,7 @@
      display.innerText += btn.innerText;
      operator = btn.innerText;
    });
+  
  });
 
  const equalBtn = document.querySelector(".equal");
@@ -52,11 +53,26 @@
    secondNumber = '';
     operator = '';
    display.innerText = firstNumber;
+  if(firstNumber =='' && operator == "/" && secondNumber == '0'){
+    display.innerText ='no division'
+  }
+
  });
 
  const display = document.querySelector(".display");
 
  let storeDisplay = "";
+ let input = '';
+
+
+ let clearBtn = document.querySelector('.clear');
+ clearBtn.addEventListener('click',function(){
+  firstNumber = "";
+  operator = "";
+  secondNumber = "";
+  display.innerText = '';
+ })
+ 
         
 
 
