@@ -27,13 +27,22 @@
  const btnNumber = document.querySelectorAll(".btn-number");
  btnNumber.forEach((btn) => {
    btn.addEventListener("click", () =>{
-     display.innerText += btn.innerText;
-     storeDisplay = display.innerText;
+    if(display.innerText === 'ERROR'){
+      display.innerText = ''
+    }
      if (operator !== "") {
+      if(btn.innerText === '.' && secondNumber.includes('.')){
+        return 
+      }
        secondNumber += btn.innerText;
      } else {
+      if(btn.innerText === '.' && firstNumber.includes('.')){
+        return 
+      }
        firstNumber += btn.innerText;
      }
+      display.innerText += btn.innerText;
+     storeDisplay = display.innerText;
    });
  });
 
@@ -42,21 +51,21 @@
    btn.addEventListener("click",() =>{
      display.innerText += btn.innerText;
      operator = btn.innerText;
+
    });
   
  });
 
  const equalBtn = document.querySelector(".equal");
  equalBtn.addEventListener("click", ()=> {
+  if(operator == "/" && secondNumber == '0'){
+    return display.innerText ='ERROR'
+  }
    let answer = operate();
     firstNumber = answer;
    secondNumber = '';
     operator = '';
    display.innerText = firstNumber;
-  if(firstNumber =='' && operator == "/" && secondNumber == '0'){
-    display.innerText ='no division'
-  }
-
  });
 
  const display = document.querySelector(".display");
